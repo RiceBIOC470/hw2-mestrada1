@@ -1,0 +1,70 @@
+function output = protein2dnaOptimized(protein_seq)
+gly_codons = {'GGC'}; 
+glu_codons = {'GAG'};
+asp_codons = {'GAC'};
+val_codons = {'GTG'};
+ala_codons = {'GCC'};
+arg_codons = {'AGA'};
+ser_codons = {'AGC'};
+lys_codons = {'AAG'};
+asn_codons = {'AAC'};
+met_codons = {'ATG'};
+ile_codons = {'ATC'};
+thr_codons = {'ACC'};
+trp_codons = {'TGG'};
+cys_codons = {'TGC'};
+tyr_codons = {'TAC'};
+leu_codons = {'CTG'};
+phe_codons = {'TTC'};
+gln_codons = {'CAG'};
+his_codons = {'CAC'};
+pro_codons = {'CCC'};
+stop_codons = {'TGA'};
+dnaseq = cell([1, length(protein_seq)]);
+for ii = 1:length(protein_seq)
+    if strcmp(protein_seq(ii), 'Gly')==1
+        dnaoutput = gly_codons(1);
+    elseif strcmp(protein_seq(ii), 'Glu')==1
+        dnaoutput = glu_codons(1);
+    elseif strcmp(protein_seq(ii), 'Asp')==1
+        dnaoutput = asp_codons(1);
+    elseif strcmp(protein_seq(ii), 'Val')==1
+        dnaoutput = val_codons(1);
+    elseif strcmp(protein_seq(ii), 'Ala')==1
+        dnaoutput = ala_codons(1);
+    elseif strcmp(protein_seq(ii), 'Arg')==1
+        dnaoutput = arg_codons(1);
+    elseif strcmp(protein_seq(ii), 'Ser')==1
+        dnaoutput = ser_codons(1);
+    elseif strcmp(protein_seq(ii), 'Lys')==1
+        dnaoutput = lys_codons(1);
+    elseif strcmp(protein_seq(ii), 'Asn')==1
+        dnaoutput = asn_codons(1);
+    elseif strcmp(protein_seq(ii), 'Met')==1
+        dnaoutput = met_codons(1);
+    elseif strcmp(protein_seq(ii), 'Ile')==1
+        dnaoutput = ile_codons(1);
+    elseif strcmp(protein_seq(ii), 'Thr')==1
+        dnaoutput = thr_codons(1);
+    elseif strcmp(protein_seq(ii), 'Trp')==1
+        dnaoutput = trp_codons(1);
+    elseif strcmp(protein_seq(ii), 'Cys')==1
+        dnaoutput = cys_codons(1);
+    elseif strcmp(protein_seq(ii), 'Tyr')==1
+        dnaoutput = tyr_codons(1);
+    elseif strcmp(protein_seq(ii), 'Leu')==1
+        dnaoutput = leu_codons(1);
+    elseif strcmp(protein_seq(ii), 'Phe')==1
+        dnaoutput = phe_codons(1);
+    elseif strcmp(protein_seq(ii), 'Gln')==1
+        dnaoutput = gln_codons(1);
+    elseif strcmp(protein_seq(ii), 'His')==1
+        dnaoutput = his_codons(1);
+    elseif strcmp(protein_seq(ii), 'Pro')==1
+        dnaoutput = pro_codons(1);
+    elseif strcmp(protein_seq(ii), 'STOP')==1
+        dnaoutput = stop_codons(1);
+    end
+   dnaseq(ii) = dnaoutput; 
+end
+output = dnaseq;
